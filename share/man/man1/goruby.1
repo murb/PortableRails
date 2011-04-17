@@ -1,0 +1,35 @@
+.TH GORUBY 1 "Ruby Programmers Reference Guide" "October 25, 2008" "UNIX"
+.SH NAME
+\fBgoruby\fP
+\- Code-golfer's best friend
+.SH SYNOPSIS
+.br
+\fBgoruby\fP
+[options ...]
+[\fB\--\fP]
+[\fIprogram_file\fP]
+[\fIargument\fP ...]
+.SH DESCRIPTION
+.B goruby
+is a kind of Ruby language processor
+which recognizes extremely shorten programs as bellow;
+
+rq"date";s De.td
+.br
+
+This means
+
+require"date";puts Date.today
+.br
+
+.SH OPTIONS
+.B goruby
+takes same options as
+\fBruby\fP(1).
+.SH SEE ALSO
+It \fBruby\fP(1)
+The stiff version of Ruby interpreter.
+
+.SH AUTHORS
+Originally written by Nobuyoshi Nakada and developed by
+Ruby core team.
