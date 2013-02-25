@@ -22,15 +22,14 @@ Don't like to cook by yourself, scroll down, I made it for you.
 1. Extract the latest ruby.
 2. Extract the latest DevKit
 3. Copy the contents of the DevKit folder onto the ruby folder. (by now you've already something that consumes 450MB(!) of your precious SSD/HDD-space)
-4. (can be skipped) rename `msys.bat` to `start-cmd.bat` (for PortableRails3.0 compatibility ;) and more obvious naming)
-5. Fix the start-cmd.bat file to support spaces in dirs, copy the 
-6. Run start-cmd.bat (or msys.bat)
-7. Make sure docs won't get installed `echo gem: --no-ri --no-rdoc > ~/.gemrc` (unless you want them, you can skip this step, I prefer The Internet)
-8. And type the magical `gem install rails` followed by Enter (and btw. bless yourself with the fact that you're now in a more or less [POSIX](http://en.wikipedia.org/wiki/POSIX)-compatible environment)
-9. Fix yourself a nice cup of coffee
-10. Seeing the prompt again? Type `rails -v` and see how it responds with somthing like `Rails 3.2.12`: congrats, you've got it installed, but it isn't portable (yet)
-11. Make sure that the gem installed batch files work in a portable setting: `cp /bin/gem.bat /bin/bin.template && for file in /bin/*.bat; do cp /bin/bin.template $file; done`
-12. Seeing the prompt again? Type `rails -v` and see how it *still* responds with somthing like `Rails 3.2.12`: congrats, you've got it portable (test it by zipping it and unpacking it somewhere else)
+4. Copy https://github.com/murb/PortableRails3/raw/master/start-cmd.bat to the main dir.
+5. Run start-cmd.bat
+6. Make sure docs won't get installed `echo gem: --no-ri --no-rdoc > ~/.gemrc` (unless you want them, you can skip this step, I prefer The Internet)
+7. And type the magical `gem install rails` followed by Enter (and btw. bless yourself with the fact that you're now in a more or less [POSIX](http://en.wikipedia.org/wiki/POSIX)-compatible environment)
+8. Fix yourself a nice cup of coffee
+9. Seeing the prompt again? Type `rails -v` and see how it responds with somthing like `Rails 3.2.12`: congrats, you've got it installed, but it isn't portable (yet)
+10. Make sure that the gem installed batch files work in a portable setting: `cp /bin/gem.bat /bin/bin.template && for file in /bin/*.bat; do cp /bin/bin.template $file; done`
+11. Seeing the prompt again? Type `rails -v` and see how it *still* responds with somthing like `Rails 3.2.12`: congrats, you've got it portable (test it by zipping it and unpacking it somewhere else)
 
 ## The instant meal
 
