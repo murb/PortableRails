@@ -10,20 +10,31 @@ Luckily things have changed, but it isn't as portable as what I named PortableRa
 
 ## The recipe
 
-Don't like to cook by yourself, scroll down, I made it for you.
+Don't like to cook by yourself, scroll down to Recipe C... A is for DIY'rs and B for something in between... (B is actually the work in progress to automate the process of creating new versions of C)
 
-### Ingredients
+### Recipe A - Script me if you can
+
+1. Download [portable ruby](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (basically step 1 to 4 or recipe A) or *create it* running prepare.sh (only tested this on MacOS-X)
+2. Extract it
+3. Run `start-cmd.bat`
+4. Run `postinstall.sh` (which takes basically care of step 6 to 11 of recipe A)
+
+### Recipe B - DIY
+
+#### Ingredients
 
 - The latest ruby in .7z format (http://rubyforge.org/frs/download.php/76799/ruby-1.9.3-p392-i386-mingw32.7z)
-- The latest *MinGW*-DevKit as self-extracting .exe (actually a .7z as well) (http://rubyforge.org/frs/download.php/76805/DevKit-mingw64-32-4.7.2-20130224-1151-sfx.exe)
+- The DevKit as self-extracting .exe (actually a .7z as well) (http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe)
 
-### Instructions
+#### Instructions
+
+(actually some details are left out of this recipe, check prepare.sh and postinstall.sh if you run into problems with this approach)
 
 1. Extract the latest ruby.
 2. Extract the latest DevKit
 3. Copy the contents of the DevKit folder onto the ruby folder. (by now you've already something that consumes 450MB(!) of your precious SSD/HDD-space)
 4. Copy https://github.com/murb/PortableRails3/raw/master/start-cmd.bat to the main dir.
-5. Run start-cmd.bat
+5. Run `start-cmd.bat`
 6. Make sure docs won't get installed `echo gem: --no-ri --no-rdoc > ~/.gemrc` (unless you want them, you can skip this step, I prefer The Internet)
 7. And type the magical `gem install rails` followed by Enter (and btw. bless yourself with the fact that you're now in a more or less [POSIX](http://en.wikipedia.org/wiki/POSIX)-compatible environment)
 8. Fix yourself a nice cup of coffee
@@ -31,17 +42,18 @@ Don't like to cook by yourself, scroll down, I made it for you.
 10. Make sure that the gem installed batch files work in a portable setting: `cp /bin/gem.bat /bin/bin.template && for file in /bin/*.bat; do cp /bin/bin.template $file; done`
 11. Seeing the prompt again? Type `rails -v` and see how it *still* responds with somthing like `Rails 3.2.12`: congrats, you've got it portable (test it by zipping it and unpacking it somewhere else)
 
-## The instant meal
 
-Allright, you came here not to do it yourself... [here it is prebundled, ~160MB zipped](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (on box.com, in just plain old zip so you can really extract it anywhere), it won't be the latest and the greatest all time... but that's the thing with instant food, it is never as fresh when you make it on your own.
+### Recipe C - The instant meal
+
+Allright, you came here not to do it yourself... [here it is prebundled, ~83MB zipped](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (on box.com, in just plain old zip so you can really extract it anywhere), it won't be the latest and the greatest all time... but that's the thing with instant food, it is never as fresh when you make it on your own.
 
 ## Future
 
-Ideally a script would be created that would let our computers cook for us, adding the freshest ingredients together using a simple script, but until that day just pray or do whatever ([getting in touch with me](http://murb.nl/contact) probably makes more sense) that I'll update the things manually every now and then.
+Updating to the latest and greatest should be made easier for the maintainer (now me). That's what `prepare.sh` (recipe A) is about to become, which I can run on my (MacOS-X) machine to prepare a simple .zip file that can be moved to a windows machine.
 
 ## Bugs, suggestions?
 
-The software has been tested on Windows XP running on a MacBookPro via Virtual Box and a locked down Hewlett Packard machine within a bank (I guess that means pretty much locked down) and it worked. I hope it also works for you within your school, university or company. If it doesn't try harder first, and then [try contacting me](http://murb.nl/contact). 
+The software has been tested on Windows XP running on a MacBookPro via Virtual Box and a locked down Hewlett Packard machine within a bank (I guess that means pretty much locked down) and it worked. I hope it also works for you within your school, university or other company. If it doesn't try harder first, and then [try contacting me](http://murb.nl/contact). 
 
 ## Credits
 
