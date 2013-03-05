@@ -23,13 +23,20 @@ cp testssl.rb binaries/PortableRuby/bin
 cp gemrc binaries/PortableRuby/etc
 echo "export SSL_CERT_FILE=/lib/ruby/site_ruby/1.9.1/rubygems/ssl_certs/ca-bundle.pem" >> binaries/PortableRuby/etc/profile
 cp postinstall.sh binaries/PortableRuby/bin
+cp bonus/wkhtmltopdf/* binaries/PortableRuby/bin
 
+# cleanup
+rm -rf binaries/PortableRuby/postinstall
+rm binaries/PortableRuby/m.ico
+rm binaries/PortableRuby/msys.ico
+rm binaries/PortableRuby/dk.rb
+rm binaries/PortableRuby/msys.bat
+rm binaries/PortableRuby/devkitvars.*
 
 # make sure the files generated in /bin work 'anywhere'
 ruby patch.rb
 
 # and let me package it for you (in plain old WindowsXP-compatible .zip)
-rm -rf binaries/PortableRuby/postinstall
 
 rm portable_ruby.zip
 cd binaries
