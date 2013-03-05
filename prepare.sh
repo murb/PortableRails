@@ -19,12 +19,18 @@ mv binaries/PortableRuby/devkit.exe binaries
 
 # seasoning
 cp start-cmd.bat binaries/PortableRuby
+cp testssl.rb binaries/PortableRuby/bin
 cp gemrc binaries/PortableRuby/etc
+echo "export SSL_CERT_FILE=/lib/ruby/site_ruby/1.9.1/rubygems/ssl_certs/ca-bundle.pem" >> binaries/PortableRuby/etc/profile
 cp postinstall.sh binaries/PortableRuby/bin
+
 
 # make sure the files generated in /bin work 'anywhere'
 ruby patch.rb
 
 # and let me package it for you (in plain old WindowsXP-compatible .zip)
+rm -rf binaries/PortableRuby/postinstall
+
 rm portable_ruby.zip
-zip -r portable_ruby.zip binaries/PortableRuby
+cd binaries
+zip -r ../portable_ruby.zip PortableRuby

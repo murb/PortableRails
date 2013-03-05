@@ -14,7 +14,7 @@ Don't like to cook by yourself, scroll down to Recipe C... A is for DIY'rs and B
 
 ### Recipe A - Script me if you can
 
-1. Download [portable ruby](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (basically step 1 to 4 or recipe A) or *create it* running prepare.sh (only tested this on MacOS-X)
+1. Download [portable ruby](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (basically step 1 to 4 or recipe A) or *create it* running the prepare.sh-script (only tested this on MacOS-X, but it isn't really advanced stuff here)
 2. Extract it
 3. Run `start-cmd.bat`
 4. Run `postinstall.sh` (which takes basically care of step 6 to 11 of recipe A)
