@@ -43,7 +43,7 @@ set COMSPEC=%WINDIR%\SysWOW64\cmd.exe
 goto EOF
 :_NotX64
 
-if NOT EXIST %WD%msys-1.0.dll set WD=%~dp0\bin\
+if NOT EXIST %WD%msys-1.0.dll set WD=%~dp0bin\
 
 rem ember Set up option to use rxvt based on value of %1
 set MSYSCON=unknown
