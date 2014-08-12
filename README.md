@@ -38,7 +38,7 @@ Don't like to cook by yourself, scroll down to Recipe C... A is for DIY'rs and B
 4. Copy https://github.com/murb/PortableRails3/raw/master/start-cmd.bat to the main dir.
 5. Run `start-cmd.bat`
 6. Make sure docs won't get installed `echo gem: --no-ri --no-rdoc > ~/.gemrc` (unless you want them, you can skip this step, I prefer The Internet)
-7. Open the `installer.rb` files found in the rubygem folder (`/lib/ruby/1.9.1/rubygems/installer.rb` and maybe also in `/lib/ruby/site_ruby/1.9.1/rubygems/installer.rb`) and make sure that the lines after `def shebang(a)` reads `return '#!/usr/bin/env ruby'` (all rest in this method will now be skipped, and actually this line is enough)
+7. Open the `installer.rb` files found in the rubygem folder (`/lib/ruby/1.9.1/rubygems/installer.rb` and maybe also in `/lib/ruby/site_ruby/1.9.1/rubygems/installer.rb`) and make sure that the line after `def shebang(a)` reads `return '#!/usr/bin/env ruby'` (all rest in this method will now be skipped, and actually this line is enough)
 8. And type the magical `gem install rails` followed by Enter (and btw. bless yourself with the fact that you're now in a more or less [POSIX](http://en.wikipedia.org/wiki/POSIX)-compatible environment)
 9. Fix yourself a nice cup of coffee
 10. Seeing the prompt again? Type `rails -v` and see how it responds with somthing like `Rails 3.2.12`: congrats, you've got it installed, but it isn't portable (yet)
