@@ -26,6 +26,8 @@ Don't like to cook by yourself, scroll down to Recipe C... A is for DIY'rs and B
 - The latest ruby in .7z format (http://rubyforge.org/frs/download.php/76799/ruby-1.9.3-p392-i386-mingw32.7z)
 - The DevKit as self-extracting .exe (actually a .7z as well) (http://cloud.github.com/downloads/oneclick/rubyinstaller/DevKit-tdm-32-4.5.2-20111229-1559-sfx.exe)
 
+(in case you're looking for the latest and greatest versions, have a look at the [ruby installer download page](http://rubyinstaller.org/downloads/))
+
 #### Instructions
 
 (actually some details are left out of this recipe, check prepare.sh and postinstall.sh if you run into problems with this approach)
@@ -36,12 +38,14 @@ Don't like to cook by yourself, scroll down to Recipe C... A is for DIY'rs and B
 4. Copy https://github.com/murb/PortableRails3/raw/master/start-cmd.bat to the main dir.
 5. Run `start-cmd.bat`
 6. Make sure docs won't get installed `echo gem: --no-ri --no-rdoc > ~/.gemrc` (unless you want them, you can skip this step, I prefer The Internet)
-7. And type the magical `gem install rails` followed by Enter (and btw. bless yourself with the fact that you're now in a more or less [POSIX](http://en.wikipedia.org/wiki/POSIX)-compatible environment)
-8. Fix yourself a nice cup of coffee
-9. Seeing the prompt again? Type `rails -v` and see how it responds with somthing like `Rails 3.2.12`: congrats, you've got it installed, but it isn't portable (yet)
-10. Make sure that the gem installed batch files work in a portable setting: `cp /bin/gem.bat /bin/bin.template && for file in /bin/*.bat; do cp /bin/bin.template $file; done`
-11. Seeing the prompt again? Type `rails -v` and see how it *still* responds with somthing like `Rails 3.2.12`: congrats, you've got it portable (test it by zipping it and unpacking it somewhere else)
+7. Open the `installer.rb` files found in the rubygem folder (`/lib/ruby/1.9.1/rubygems/installer.rb` and maybe also in `/lib/ruby/site_ruby/1.9.1/rubygems/installer.rb`) and make sure that the line after `def shebang(a)` reads `return '#!/usr/bin/env ruby'` (all rest in this method will now be skipped, and actually this line is enough)
+8. And type the magical `gem install rails` followed by Enter (and btw. bless yourself with the fact that you're now in a more or less [POSIX](http://en.wikipedia.org/wiki/POSIX)-compatible environment)
+9. Fix yourself a nice cup of coffee
+10. Seeing the prompt again? Type `rails -v` and see how it responds with somthing like `Rails 3.2.12`: congrats, you've got it installed, but it isn't portable (yet)
+11. Make sure that the gem installed batch files work in a portable setting: `cp /bin/gem.bat /bin/bin.template && for file in /bin/*.bat; do cp /bin/bin.template $file; done`
+12. Seeing the prompt again? Type `rails -v` and see how it *still* responds with somthing like `Rails 3.2.12`: congrats, you've got it portable (test it by zipping it and unpacking it somewhere else)
 
+In case you're bothered with a warning "DL is depricated", just uncomment the line `warn "DL is deprecated, please use Fiddle"` in /lib/ruby/2.0.0/dl.rb (hat tip to mamat hensem)
 
 ### Recipe C - The instant meal
 
@@ -53,7 +57,7 @@ Updating to the latest and greatest should be made easier for the maintainer (no
 
 ## Bugs, suggestions?
 
-The software has been tested on Windows XP running on a MacBookPro via Virtual Box and a locked down Hewlett Packard machine within a bank (I guess that means pretty much locked down) and it worked. I hope it also works for you within your school, university or other company. If it doesn't try harder first, and then [try contacting me](http://murb.nl/contact). 
+The software has been tested on Windows XP running on a MacBookPro via Virtual Box and a locked down Hewlett Packard machine within a bank (I guess that means pretty much locked down) and it worked. I hope it also works for you within your school, university or other company. If it doesn't try harder first, and then [try contacting me](http://murb.nl/contact).
 
 ## Credits
 
