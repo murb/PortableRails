@@ -53,6 +53,10 @@ Allright, you came here not to do it yourself... [here it is prebundled, ~83MB z
 
 In case you're bothered with a warning "DL is depricated", just uncomment the line `warn "DL is deprecated, please use Fiddle"` in /lib/ruby/2.0.0/dl.rb (hat tip to mamat hensem)
 
+## After installation
+
+When you're running it portable on your Windows machine you can simply create a new rails program using the infamous `rails new {applicationname}`-command. In case you're not allowed to access the internet rerun the `bundle`-command with the `--local` option (`bundle --local`) inside the {applicationname} directory.
+
 ## Old versions
 
 No guarantee that they still work in more up to date environments, but for your information:
@@ -71,7 +75,7 @@ The software has been tested on Windows XP running on a MacBookPro via Virtual B
 
 ## Known defects
 
-* Coffeescript doesn't work properly currently. This is a known issue, and haven't had the time to figure this out correctly.
+* Coffeescript doesn't work properly currently. This is a known issue, and haven't had the time to figure this out correctly. Just remove the `//= require turbolinks`-line (or alternatively: simply removing the `=` makes it a comment) from application.js and make sure no .coffee files are being included
 
 ## Credits
 
