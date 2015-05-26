@@ -69,6 +69,10 @@ Updating to the latest and greatest should be made easier for the maintainer (no
 
 The software has been tested on Windows XP running on a MacBookPro via Virtual Box and a locked down Hewlett Packard machine within a bank (I guess that means pretty much locked down) and it worked. I hope it also works for you within your school, university or other company. If it doesn't try harder first, and then [try contacting me](http://murb.nl/contact).
 
+## Known defects
+
+* Coffeescript doesn't work properly currently. This is a known issue, and haven't had the time to figure this out correctly.
+
 ## Credits
 
 All credits go to the http://rubyinstaller.org/downloads/ team. I hardly did anything. Give them a big thanks!
