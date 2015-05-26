@@ -1,4 +1,4 @@
-# PortableRails3(.2)
+# PortableRails 4
 
 The InstantRails project ( http://instantrails.rubyforge.org/ ) is outdated and contains just too much IMHO ( Apache, PHP, who needs that when searching for Rails? ). Other options to get Rails running require an installer ( http://railsinstaller.org/ or http://rubyinstaller.org/ ), which is good, but in some environments ( limited access accounts ) installing is not an option. And in yet other environments, you'd, well I'd, rather have a command line option, instead of an in-your-face installer that requires end-users to press 'next', 'next', 'next'...
 
@@ -6,20 +6,26 @@ So that's why about two years ago I created Portable Rails 3. It's name was 'ins
 
 Installing was as simple as extracting (or cloning) and running `start-cmd.bat`, but things have changed in the meantime. Rails 3.2 expects a compiler present on the system, and for this the approach that worked for 3.0 no longer works.
 
-Luckily things have changed, but it isn't as portable as what I named PortableRails3 two years ago ([the original PortableRails3 is still available in the 3.0 branch](https://github.com/murb/PortableRails3/tree/3.0)). So for now I'll call it a recipe. A dumb recipe, as you've got to perform these steps still manually, but they're quite easy. As I don't think Github is meant for sharing binaries I won't publish the result on Github anymore.
+Luckily things have changed, but it isn't as portable as what I named PortableRails3 two years ago. So for now I'll call it a recipe. A dumb recipe, as you've got to perform these steps still manually, but they're quite easy. As I don't think Github is meant for sharing binaries I won't publish the result on Github anymore.
 
 ## The recipe
 
 Don't like to cook by yourself, scroll down to Recipe C... A is for DIY'rs and B for something in between... (B is actually the work in progress to automate the process of creating new versions of C)
 
-### Recipe A - Script me if you can
+### Recipe A - The instant meal
 
-1. Download [portable ruby](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (basically step 1 to 4 or recipe A) or *create it* running the prepare.sh-script (only tested this on MacOS-X, but it isn't really advanced stuff here)
+Allright, you came here not to do it yourself... [here it is prebundled, ~83MB zipped](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (on box.com, in just plain old zip so you can really extract it anywhere), it won't be the latest and the greatest all time... but that's the thing with instant food, it is never as fresh when you make it on your own.
+
+### Recipe B - Script me if you can
+
+1. Download [portable ruby](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (basically step 1 to 4 or recipe C) or *create it* running the prepare.sh-script (only tested this on MacOS-X, but it isn't really advanced stuff here); the latest is based on Ruby 2.1.6 (getting SQLite to work on 2.2 at the moment of writing was bit too much of a hassle))
 2. Extract it
 3. Run `start-cmd.bat`
-4. Run `postinstall.sh` (which takes basically care of step 6 to 11 of recipe A)
+4. Run `postinstall.sh` (which takes basically care of step 6 to 11 of recipe C)
 
-### Recipe B - DIY
+### Recipe C - DIY
+
+(or the documentation of all steps that I've scripted)
 
 #### Ingredients
 
@@ -38,7 +44,7 @@ Don't like to cook by yourself, scroll down to Recipe C... A is for DIY'rs and B
 4. Copy https://github.com/murb/PortableRails3/raw/master/start-cmd.bat to the main dir.
 5. Run `start-cmd.bat`
 6. Make sure docs won't get installed `echo gem: --no-ri --no-rdoc > ~/.gemrc` (unless you want them, you can skip this step, I prefer The Internet)
-7. Open the `installer.rb` files found in the rubygem folder (`/lib/ruby/1.9.1/rubygems/installer.rb` and maybe also in `/lib/ruby/site_ruby/1.9.1/rubygems/installer.rb`) and make sure that the line after `def shebang(a)` reads `return '#!/usr/bin/env ruby'` (all rest in this method will now be skipped, and actually this line is enough)
+7. Open the `installer.rb` files found in the rubygem folder (`/lib/ruby/2.1.6/rubygems/installer.rb` and maybe also in `/lib/ruby/site_ruby/2.1.6/rubygems/installer.rb`) and make sure that the line after `def shebang(a)` reads `return '#!/usr/bin/env ruby'` (all rest in this method will now be skipped, and actually this line is enough)
 8. And type the magical `gem install rails` followed by Enter (and btw. bless yourself with the fact that you're now in a more or less [POSIX](http://en.wikipedia.org/wiki/POSIX)-compatible environment)
 9. Fix yourself a nice cup of coffee
 10. Seeing the prompt again? Type `rails -v` and see how it responds with somthing like `Rails 3.2.12`: congrats, you've got it installed, but it isn't portable (yet)
@@ -47,9 +53,13 @@ Don't like to cook by yourself, scroll down to Recipe C... A is for DIY'rs and B
 
 In case you're bothered with a warning "DL is depricated", just uncomment the line `warn "DL is deprecated, please use Fiddle"` in /lib/ruby/2.0.0/dl.rb (hat tip to mamat hensem)
 
-### Recipe C - The instant meal
+## Old versions
 
-Allright, you came here not to do it yourself... [here it is prebundled, ~83MB zipped](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (on box.com, in just plain old zip so you can really extract it anywhere), it won't be the latest and the greatest all time... but that's the thing with instant food, it is never as fresh when you make it on your own.
+No guarantee that they still work in more up to date environments, but for your information:
+
+3.0: https://github.com/murb/PortableRails3/tree/3.0
+3.2: https://github.com/murb/PortableRails3/tree/3.2
+4.2: https://github.com/murb/PortableRails3/tree/4.2 (current)
 
 ## Future
 

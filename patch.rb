@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-files = ['binaries/PortableRuby/lib/ruby/1.9.1/rubygems/installer.rb','binaries/PortableRuby/lib/ruby/site_ruby/1.9.1/rubygems/installer.rb']
+files = ['binaries/PortableRuby/lib/ruby/2.1.0/rubygems/installer.rb'] #,'binaries/PortableRuby/lib/ruby/site_ruby/2.2.0/rubygems/installer.rb'
 files.each do |file|
   text = File.open(file).read
   text.gsub!("return '#!/usr/bin/env ruby'","")
