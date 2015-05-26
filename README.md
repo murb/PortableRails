@@ -14,11 +14,11 @@ Don't like to cook by yourself, scroll down to Recipe C... A is for DIY'rs and B
 
 ### Recipe A - The instant meal
 
-Allright, you came here not to do it yourself... [here it is prebundled, ~83MB zipped](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (on box.com, in just plain old zip so you can really extract it anywhere), it won't be the latest and the greatest all time... but that's the thing with instant food, it is never as fresh when you make it on your own.
+Allright, you came here not to do it yourself... [here it is prebundled, ~83MB zipped](https://app.box.com/PortableRails) (on box.com, in just plain old zip so you can really extract it anywhere), it won't be the latest and the greatest all time... but that's the thing with instant food, it is never as fresh when you make it on your own.
 
 ### Recipe B - Script me if you can
 
-1. Download [portable ruby](https://www.box.com/s/7o1sqrvqey1t9ii4hv28) (basically step 1 to 4 or recipe C) or *create it* running the prepare.sh-script (only tested this on MacOS-X, but it isn't really advanced stuff here); the latest is based on Ruby 2.1.6 (getting SQLite to work on 2.2 at the moment of writing was bit too much of a hassle))
+1. Download [portable ruby](https://app.box.com/PortableRails) (basically step 1 to 4 or recipe C) or *create it* running the prepare.sh-script (only tested this on MacOS-X, but it isn't really advanced stuff here); the latest is based on Ruby 2.1.6 (getting SQLite to work on 2.2 at the moment of writing was bit too much of a hassle))
 2. Extract it
 3. Run `start-cmd.bat`
 4. Run `postinstall.sh` (which takes basically care of step 6 to 11 of recipe C)
