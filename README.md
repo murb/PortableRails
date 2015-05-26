@@ -57,9 +57,9 @@ In case you're bothered with a warning "DL is depricated", just uncomment the li
 
 No guarantee that they still work in more up to date environments, but for your information:
 
-3.0: https://github.com/murb/PortableRails3/tree/3.0
-3.2: https://github.com/murb/PortableRails3/tree/3.2
-4.2: https://github.com/murb/PortableRails3/tree/4.2 (current)
+* 3.0 (ruby 1.9): https://github.com/murb/PortableRails/tree/3.0
+* 3.2 (ruby 1.9): https://github.com/murb/PortableRails/tree/3.2
+* 4.2 (ruby 2.1): https://github.com/murb/PortableRails/tree/4.2 (current)
 
 ## Future
 
